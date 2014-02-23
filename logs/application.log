@@ -1,0 +1,629 @@
+2014-02-23 10:35:42,493 - [INFO] - from play in pool-4-thread-2 
+Listening for HTTP on /0.0.0.0:9000
+
+2014-02-23 10:36:10,994 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_070c1dd96ff1bb8?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8
+
+2014-02-23 10:36:13,840 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2014-02-23 10:36:16,455 - [ERROR] - from play in play-internal-execution-context-2 
+Cannot invoke the action, eventually got an error: javax.persistence.PersistenceException: Query threw SQLException:Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist 
+Bind values:[] 
+Query was:
+select t0.id c0, t0.name c1, t0.create_date c2, t0.update_date c3 from parent t0 
+limit 6 
+
+
+
+2014-02-23 10:36:16,487 - [ERROR] - from application in play-internal-execution-context-2 
+
+
+! @6hbi999pm - Internal server error, for (GET) [/] ->
+
+play.api.Application$$anon$1: Execution exception[[PersistenceException: Query threw SQLException:Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist 
+Bind values:[] 
+Query was:
+select t0.id c0, t0.name c1, t0.create_date c2, t0.update_date c3 from parent t0 
+limit 6 
+
+]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: javax.persistence.PersistenceException: Query threw SQLException:Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist 
+Bind values:[] 
+Query was:
+select t0.id c0, t0.name c1, t0.create_date c2, t0.update_date c3 from parent t0 
+limit 6 
+
+
+	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:790) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:767) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:202) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:265) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1460) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885) ~[avaje-ebeanorm.jar:na]
+	at controllers.Application.index(Application.java:36) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:93) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:93) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_51]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_51]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_51]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_51]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.Util.getInstance(Util.java:386) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2683) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2144) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2310) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:174) ~[bonecp.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:377) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:162) ~[avaje-ebeanorm.jar:na]
+	... 25 common frames omitted
+
+2014-02-23 10:36:16,507 - [ERROR] - from play in play-internal-execution-context-1 
+Cannot invoke the action, eventually got an error: javax.persistence.PersistenceException: Query threw SQLException:Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist 
+Bind values:[] 
+Query was:
+select t0.id c0, t0.name c1, t0.create_date c2, t0.update_date c3 from parent t0 
+limit 6 
+
+
+
+2014-02-23 10:36:16,519 - [ERROR] - from application in play-internal-execution-context-1 
+
+
+! @6hbi99a18 - Internal server error, for (GET) [/] ->
+
+play.api.Application$$anon$1: Execution exception[[PersistenceException: Query threw SQLException:Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist 
+Bind values:[] 
+Query was:
+select t0.id c0, t0.name c1, t0.create_date c2, t0.update_date c3 from parent t0 
+limit 6 
+
+]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: javax.persistence.PersistenceException: Query threw SQLException:Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist 
+Bind values:[] 
+Query was:
+select t0.id c0, t0.name c1, t0.create_date c2, t0.update_date c3 from parent t0 
+limit 6 
+
+
+	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:790) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQuery.createPersistenceException(CQuery.java:767) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:202) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:77) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:265) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1460) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885) ~[avaje-ebeanorm.jar:na]
+	at controllers.Application.index(Application.java:36) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:93) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:93) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'heroku_070c1dd96ff1bb8.parent' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_51]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_51]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_51]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_51]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.Util.getInstance(Util.java:386) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2683) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2144) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2310) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.jolbox.bonecp.PreparedStatementHandle.executeQuery(PreparedStatementHandle.java:174) ~[bonecp.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQuery.prepareBindExecuteQuery(CQuery.java:377) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:162) ~[avaje-ebeanorm.jar:na]
+	... 25 common frames omitted
+
+2014-02-23 10:37:19,601 - [ERROR] - from com.jolbox.bonecp.ConnectionHandle in play-akka.actor.default-dispatcher-9 
+Database access problem. Killing off this connection and all remaining connections in the connection pool. SQL State = 08S01
+
+2014-02-23 10:37:19,603 - [ERROR] - from play in play-internal-execution-context-2 
+Cannot invoke the action, eventually got an error: javax.persistence.PersistenceException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 63,147 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+
+2014-02-23 10:37:19,612 - [ERROR] - from application in play-internal-execution-context-2 
+
+
+! @6hbi9cpa2 - Internal server error, for (GET) [/] ->
+
+play.api.Application$$anon$1: Execution exception[[PersistenceException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 63,147 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: javax.persistence.PersistenceException: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 63,147 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at com.avaje.ebeaninternal.server.transaction.TransactionManager.createQueryTransaction(TransactionManager.java:339) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.createQueryTransaction(DefaultServer.java:2018) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.OrmQueryRequest.initTransIfRequired(OrmQueryRequest.java:178) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1459) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.querydefn.DefaultOrmQuery.findList(DefaultOrmQuery.java:885) ~[avaje-ebeanorm.jar:na]
+	at controllers.Application.index(Application.java:36) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:93) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:93) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 63,147 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_51]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_51]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_51]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_51]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3589) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3478) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4019) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2677) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5030) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.jolbox.bonecp.ConnectionHandle.setAutoCommit(ConnectionHandle.java:1292) ~[bonecp.jar:na]
+	at play.api.db.BoneCPApi$$anon$1.onCheckOut(DB.scala:329) ~[play-jdbc_2.10.jar:2.2.1]
+	at com.jolbox.bonecp.AbstractConnectionStrategy.postConnection(AbstractConnectionStrategy.java:75) ~[bonecp.jar:na]
+	at com.jolbox.bonecp.AbstractConnectionStrategy.getConnection(AbstractConnectionStrategy.java:92) ~[bonecp.jar:na]
+	at com.jolbox.bonecp.BoneCP.getConnection(BoneCP.java:553) ~[bonecp.jar:na]
+	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:131) ~[bonecp.jar:na]
+	at play.db.ebean.EbeanPlugin$WrappingDatasource.getConnection(EbeanPlugin.java:147) ~[play-java-ebean_2.10.jar:2.2.1]
+	at com.avaje.ebeaninternal.server.transaction.TransactionManager.createQueryTransaction(TransactionManager.java:313) ~[avaje-ebeanorm.jar:na]
+	... 25 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3039) ~[mysql-connector-java-5.1.20.jar:na]
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3489) ~[mysql-connector-java-5.1.20.jar:na]
+	... 39 common frames omitted
+
+2014-02-23 10:37:28,589 - [ERROR] - from com.jolbox.bonecp.hooks.AbstractConnectionHook in BoneCP-pool-watch-thread 
+Failed to acquire connection to jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_070c1dd96ff1bb8?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8 Sleeping for 1000ms and trying again. Attempts left: 10. Exception: null.Message:User 'b07194b44593b5' has exceeded the 'max_user_connections' resource (current value: 10)
+
+2014-02-23 10:37:31,474 - [ERROR] - from com.jolbox.bonecp.hooks.AbstractConnectionHook in BoneCP-pool-watch-thread 
+Failed to acquire connection to jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_070c1dd96ff1bb8?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8 Sleeping for 1000ms and trying again. Attempts left: 9. Exception: null.Message:User 'b07194b44593b5' has exceeded the 'max_user_connections' resource (current value: 10)
+
+2014-02-23 10:37:35,055 - [ERROR] - from com.jolbox.bonecp.hooks.AbstractConnectionHook in BoneCP-pool-watch-thread 
+Failed to acquire connection to jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_070c1dd96ff1bb8?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8 Sleeping for 1000ms and trying again. Attempts left: 8. Exception: null.Message:User 'b07194b44593b5' has exceeded the 'max_user_connections' resource (current value: 10)
+
+2014-02-23 10:37:37,921 - [ERROR] - from com.jolbox.bonecp.hooks.AbstractConnectionHook in BoneCP-pool-watch-thread 
+Failed to acquire connection to jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_070c1dd96ff1bb8?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8 Sleeping for 1000ms and trying again. Attempts left: 7. Exception: null.Message:User 'b07194b44593b5' has exceeded the 'max_user_connections' resource (current value: 10)
+
+2014-02-23 10:41:45,377 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6hbia22dh - Internal server error, for (GET) [/] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not enough arguments for method initTestData: (pIndex: Int, cIndex: Int)play.mvc.Result.
+Unspecified value parameters pIndex, cIndex.]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-02-23 10:43:39,485 - [ERROR] - from play in play-internal-execution-context-3 
+Cannot invoke the action, eventually got an error: javax.persistence.PersistenceException: java.sql.SQLException: Attempting to obtain a connection from a pool that has already been shutdown. 
+Stack trace of location where pool was shutdown follows:
+ java.lang.Thread.getStackTrace(Thread.java:1588)
+ com.jolbox.bonecp.BoneCP.captureStackTrace(BoneCP.java:572)
+ com.jolbox.bonecp.BoneCP.shutdown(BoneCP.java:161)
+ com.jolbox.bonecp.BoneCPDataSource.close(BoneCPDataSource.java:143)
+ play.api.db.BoneCPApi.shutdownPool(DB.scala:410)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:264)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:262)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.db.BoneCPPlugin.onStop(DB.scala:262)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:105)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:104)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply$mcV$sp(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:103)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:102)
+ scala.Option.map(Option.scala:145)
+ play.api.Play$.stop(Play.scala:102)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:124)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112)
+ scala.Option.map(Option.scala:145)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110)
+ scala.util.Success.flatMap(Try.scala:200)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+ scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361)
+ scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+ scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+ scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+ scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+
+2014-02-23 10:43:39,495 - [ERROR] - from application in play-internal-execution-context-3 
+
+
+! @6hbia8f8p - Internal server error, for (GET) [/initTestData?pInx=10] ->
+
+play.api.Application$$anon$1: Execution exception[[PersistenceException: java.sql.SQLException: Attempting to obtain a connection from a pool that has already been shutdown. 
+Stack trace of location where pool was shutdown follows:
+ java.lang.Thread.getStackTrace(Thread.java:1588)
+ com.jolbox.bonecp.BoneCP.captureStackTrace(BoneCP.java:572)
+ com.jolbox.bonecp.BoneCP.shutdown(BoneCP.java:161)
+ com.jolbox.bonecp.BoneCPDataSource.close(BoneCPDataSource.java:143)
+ play.api.db.BoneCPApi.shutdownPool(DB.scala:410)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:264)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:262)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.db.BoneCPPlugin.onStop(DB.scala:262)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:105)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:104)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply$mcV$sp(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:103)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:102)
+ scala.Option.map(Option.scala:145)
+ play.api.Play$.stop(Play.scala:102)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:124)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112)
+ scala.Option.map(Option.scala:145)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110)
+ scala.util.Success.flatMap(Try.scala:200)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+ scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361)
+ scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+ scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+ scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+ scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: javax.persistence.PersistenceException: java.sql.SQLException: Attempting to obtain a connection from a pool that has already been shutdown. 
+Stack trace of location where pool was shutdown follows:
+ java.lang.Thread.getStackTrace(Thread.java:1588)
+ com.jolbox.bonecp.BoneCP.captureStackTrace(BoneCP.java:572)
+ com.jolbox.bonecp.BoneCP.shutdown(BoneCP.java:161)
+ com.jolbox.bonecp.BoneCPDataSource.close(BoneCPDataSource.java:143)
+ play.api.db.BoneCPApi.shutdownPool(DB.scala:410)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:264)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:262)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.db.BoneCPPlugin.onStop(DB.scala:262)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:105)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:104)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply$mcV$sp(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:103)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:102)
+ scala.Option.map(Option.scala:145)
+ play.api.Play$.stop(Play.scala:102)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:124)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112)
+ scala.Option.map(Option.scala:145)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110)
+ scala.util.Success.flatMap(Try.scala:200)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+ scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361)
+ scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+ scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+ scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+ scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+	at com.avaje.ebeaninternal.server.transaction.TransactionManager.createTransaction(TransactionManager.java:306) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.createServerTransaction(DefaultServer.java:2014) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.BeanRequest.createImplicitTransIfRequired(BeanRequest.java:57) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.PersistRequest.initTransIfRequired(PersistRequest.java:81) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.saveRecurse(DefaultPersister.java:279) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:248) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1568) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1558) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebean.Ebean.save(Ebean.java:453) ~[avaje-ebeanorm.jar:na]
+	at play.db.ebean.Model.save(Model.java:91) ~[play-java-ebean_2.10.jar:2.2.1]
+	at controllers.Application.initTestData(Application.java:205) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:181) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:181) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+Caused by: java.sql.SQLException: Attempting to obtain a connection from a pool that has already been shutdown. 
+Stack trace of location where pool was shutdown follows:
+ java.lang.Thread.getStackTrace(Thread.java:1588)
+ com.jolbox.bonecp.BoneCP.captureStackTrace(BoneCP.java:572)
+ com.jolbox.bonecp.BoneCP.shutdown(BoneCP.java:161)
+ com.jolbox.bonecp.BoneCPDataSource.close(BoneCPDataSource.java:143)
+ play.api.db.BoneCPApi.shutdownPool(DB.scala:410)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:264)
+ play.api.db.BoneCPPlugin$$anonfun$onStop$1.apply(DB.scala:262)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.db.BoneCPPlugin.onStop(DB.scala:262)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:105)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:104)
+ scala.collection.immutable.List.foreach(List.scala:318)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply$mcV$sp(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:104)
+ play.utils.Threads$.withContextClassLoader(Threads.scala:18)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:103)
+ play.api.Play$$anonfun$stop$1.apply(Play.scala:102)
+ scala.Option.map(Option.scala:145)
+ play.api.Play$.stop(Play.scala:102)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:124)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112)
+ scala.Option.map(Option.scala:145)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112)
+ play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110)
+ scala.util.Success.flatMap(Try.scala:200)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110)
+ play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+ scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+ scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361)
+ scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+ scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+ scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+ scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+	at com.jolbox.bonecp.AbstractConnectionStrategy.preConnection(AbstractConnectionStrategy.java:52) ~[bonecp.jar:na]
+	at com.jolbox.bonecp.AbstractConnectionStrategy.getConnection(AbstractConnectionStrategy.java:88) ~[bonecp.jar:na]
+	at com.jolbox.bonecp.BoneCP.getConnection(BoneCP.java:553) ~[bonecp.jar:na]
+	at com.jolbox.bonecp.BoneCPDataSource.getConnection(BoneCPDataSource.java:131) ~[bonecp.jar:na]
+	at play.db.ebean.EbeanPlugin$WrappingDatasource.getConnection(EbeanPlugin.java:147) ~[play-java-ebean_2.10.jar:2.2.1]
+	at com.avaje.ebeaninternal.server.transaction.TransactionManager.createTransaction(TransactionManager.java:277) ~[avaje-ebeanorm.jar:na]
+	... 30 common frames omitted
+
+2014-02-23 10:43:57,277 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_070c1dd96ff1bb8?reconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8
+
+2014-02-23 10:43:59,356 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2014-02-23 10:45:28,729 - [ERROR] - from play in play-internal-execution-context-3 
+Cannot invoke the action, eventually got an error: javax.persistence.OptimisticLockException: Data has changed. updated [0] rows sql[delete from parent where id=? and update_date=?] bind[null]
+
+2014-02-23 10:45:28,737 - [ERROR] - from application in play-internal-execution-context-3 
+
+
+! @6hbiaekog - Internal server error, for (GET) [/initTestData?p=5&c=5] ->
+
+play.api.Application$$anon$1: Execution exception[[OptimisticLockException: Data has changed. updated [0] rows sql[delete from parent where id=? and update_date=?] bind[null]]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) [scala-library.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:411) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:408) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:37) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:133) [scala-library.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:58) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:254) [scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:249) [scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library.jar:na]
+Caused by: javax.persistence.OptimisticLockException: Data has changed. updated [0] rows sql[delete from parent where id=? and update_date=?] bind[null]
+	at com.avaje.ebeaninternal.server.persist.dml.DmlHandler.checkRowCount(DmlHandler.java:95) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.dml.DeleteHandler.execute(DeleteHandler.java:54) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:86) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.dml.DmlBeanPersister.delete(DmlBeanPersister.java:48) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.DefaultPersistExecute.executeDeleteBean(DefaultPersistExecute.java:99) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:456) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:478) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:583) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.persist.DefaultPersister.delete(DefaultPersister.java:400) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1825) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebeaninternal.server.core.DefaultServer.delete(DefaultServer.java:1815) ~[avaje-ebeanorm.jar:na]
+	at com.avaje.ebean.Ebean.delete(Ebean.java:596) ~[avaje-ebeanorm.jar:na]
+	at play.db.ebean.Model.delete(Model.java:167) ~[play-java-ebean_2.10.jar:2.2.1]
+	at controllers.Application.initTestData(Application.java:185) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:181) ~[classes/:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.apply(routes_routing.scala:181) ~[classes/:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10.jar:2.2.1]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10.jar:2.2.1]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10.jar:2.2.1]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:278) ~[scala-library.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:274) ~[scala-library.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:29) [scala-library.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10.jar:2.2.1]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10.jar:2.2.0]
+	... 4 common frames omitted
+

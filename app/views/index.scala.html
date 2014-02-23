@@ -1,0 +1,55 @@
+@(pager: Pager, parentList: List[Parent])
+
+@main(pager.title) {
+
+    <ul class="pagination pagination-right">
+      <li><a class="btn btn-default" href="@routes.Application.createParent(pager.maxPageCount)">親レコードを作成</a></li>
+      <li class="@if(pager.pageNum==1){active}"><a href="@routes.Application.index(1)">&laquo;</a></li>
+      @for(page <- pager.getPageNumList){<li class="@if(pager.pageNum==page){active}"><a href="@routes.Application.index(page)">@page</a></li>}
+      <li class="@if(pager.pageNum==pager.maxPageCount){active}"><a href="@routes.Application.index(pager.maxPageCount)">&raquo;</a></li>
+    </ul>
+
+    <table class="table table-bordered">
+      <thead>
+        <th>Parent Name</th>
+        <th>Child's Name</th>
+      </thead>
+      <tbody>
+      @for(parent <- parentList){
+        <tr>
+          <td>
+              No.@parent.id&nbsp;@parent.name<br />
+              <a class="btn btn-default" href="@routes.Application.editParent(pager.pageNum, parent.id)">更新</a>
+              &nbsp;|&nbsp;
+              <a class="btn btn-default" href="@routes.Application.deleteParent(pager.pageNum, parent.id)">削除</a>
+              &nbsp;|&nbsp;
+              <a class="btn btn-default" href="@routes.Application.createChild(pager.pageNum, parent.id)">子レコードを作成</a>
+          </td>
+          <td>
+            <table class="table table-bordered">
+              <tbody>
+                @for(child <- parent.child){
+                <tr>
+                  <td>
+                      @parent.name&nbsp;|&nbsp;No.@child.id&nbsp;@child.name<br />
+                      <a class="btn btn-default" href="@routes.Application.editChild(pager.pageNum, child.id)">更新</a>
+                      &nbsp;|&nbsp;
+                      <a class="btn btn-default" href="@routes.Application.deleteChild(pager.pageNum, child.id)">削除</a>
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+
+    <ul class="pagination">
+      <li class="@if(pager.pageNum==1){active}"><a href="@routes.Application.index(1)">&laquo;</a></li>
+      @for(page <- pager.getPageNumList){<li class="@if(pager.pageNum==page){active}"><a href="@routes.Application.index(page)">@page</a></li>}
+      <li class="@if(pager.pageNum==pager.maxPageCount){active}"><a href="@routes.Application.index(pager.maxPageCount)">&raquo;</a></li>
+    </ul>
+
+}

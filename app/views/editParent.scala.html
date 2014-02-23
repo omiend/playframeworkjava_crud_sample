@@ -1,0 +1,22 @@
+@(title: String, pageNum: Integer, id: Long, parentForm: Form[Parent])
+
+@import helper._
+
+@main(title) {
+
+    @form(routes.Application.updateParent(pageNum, id)) {
+
+        <fieldset>
+
+            @inputText(parentForm("name"), '_label -> "Parent name")
+
+        </fieldset>
+
+        <div class="actions">
+            <input type="submit" value="Update this Parent" class="btn primary"> or
+            <a href="@routes.Application.index(pageNum)" class="btn">Cancel</a>
+        </div>
+
+    }
+
+}

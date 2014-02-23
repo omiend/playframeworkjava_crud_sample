@@ -1,0 +1,21 @@
+@(title: String, pageNum: Integer, parentId: Long, childForm: Form[Child])
+@import helper._
+
+@main(title) {
+
+    @form(routes.Application.insertChild(pageNum, parentId)) {
+
+        <fieldset>
+
+            @inputText(childForm("name"), '_label -> "Child name")
+
+        </fieldset>
+
+        <div class="actions">
+            <input type="submit" value="Create this Child" class="btn primary"> or
+            <a href="@routes.Application.index(pageNum)" class="btn">Cancel</a>
+        </div>
+
+    }
+
+}
