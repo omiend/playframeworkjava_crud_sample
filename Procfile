@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/playframework_crud_java -Dhttp.port=${PORT} -Ddb.default.url=$DATABASE_URL
+web: target/universal/stage/bin/playframework_crud_java -Dhttp.port=${PORT} -Ddb.default.url=${DATABASE_URL}
